@@ -1,0 +1,11 @@
+for troubleshooting pods below methods can be used:
+
+1. get the list of all pods
+   # kubectl get pods
+
+2. get all detailed info about a pod in yaml format (we can send output to file and analyze)
+# kubectl get pod pod_Name -o yaml  > analyze.txt
+# vim analyze.txt
+
+3. by getting description, we can see summary and try to find out the issue
+# kubectl describe pod pod_Name
