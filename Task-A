@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 10
+      template:
+        spec:
+          containers:
+          - image: busybox
+            name: hello
+            args:
+            - /bin/sh
+            - -c
+            - uname
+          restartPolicy: OnFailure   
